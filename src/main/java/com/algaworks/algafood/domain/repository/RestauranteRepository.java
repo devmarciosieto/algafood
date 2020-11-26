@@ -10,4 +10,6 @@ import java.util.List;
 public interface RestauranteRepository extends CustomJpaRepository<Restaurante, Long>{
 
     List<Restaurante> findByTaxaFreteBetween(BigDecimal taxaInicial, BigDecimal taxaFinal);
+
+    List<Restaurante> findByNomeContainingAndCozinhaId(String nome, Long cozinhaId);
 }
